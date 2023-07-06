@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meu Site</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Bem-vindo ao Meu Site</h1>
+  </header>
+  
+  <main id="content">
+    <!-- Conteúdo dinâmico será adicionado pelo JavaScript -->
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
+  </footer>
+  
+  <script>
+    function showHome() {
+      var content = document.getElementById("content");
+      content.innerHTML = `
+        <h2>Página Inicial</h2>
+        <form id="loginForm">
+          <label for="username">Nome:</label>
+          <input type="text" id="username" required>
+          
+          <label for="password">Senha:</label>
+          <input type="password" id="password" required>
+          
+          <button type="submit" onclick="login()">Entrar</button>
+          <button onclick="showForgotPassword()">Esqueci minha senha</button>
+        </form>
+      `;
+    }
+    
+    function showProducts() {
+      var content = document.getElementById("content");
+      content.innerHTML = `
+        <h2>Produtos</h2>
+        <ul id="productList">
+          <!-- Os produtos serão adicionados dinamicamente pelo JavaScript -->
+        </ul>
+      `;
+      
+      // Exemplo de lista de produtos (pode ser substituído pelos dados reais do seu sistema)
+      var products = [
+        { id: 1, name: "Produto 1", price: 10.0, image: "product1.jpg" },
+        { id: 2, name: "Produto 2", price: 20.0, image: "product2.jpg" },
+        // Adicione mais produtos aqui...
+      ];
+      
+      var productList = document.getElementById("productList");
+      
+      // Iterar sobre os produtos e criar os elementos HTML correspondentes
+      products.forEach(function(product) {
+        var listItem = document.createElement("li");
+        
+        var image = document.createElement("img");
+        image.src = product.image;
+        image.alt = product.name;
+        listItem.appendChild(image);
+        
+        var id = document.createElement("span");
+        id.textContent = "ID: " + product.id;
+        listItem.appendChild(id);
+        
+        var name = document.createElement("span");
+        name.textContent = "Nome: " + product.name;
+        listItem.appendChild(name);
+        
+        var price = document.createElement("span");
+        price.textContent = "Preço: $" + product.price;
+        listItem.appendChild(price);
+        
+        productList.appendChild(listItem);
+      });
+    }
+    
+    function showForgotPassword() {
+      var content = document.getElementById("content");
+      content.innerHTML = `
+        <h2>Esqueci minha senha</h2>
+        <form id="resetPasswordForm">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+          
+          <button type="submit" onclick="resetPassword()">Redefinir a senha</button>
+          <button onclick="showHome()">Voltar para o login</button>
+        </form>
+      `;
+    }
+    
+    function login(event) {
+      if (event) {
+        event.preventDefault(); // Impede o envio do formulário (recarregamento da página)
+      }
+  
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+  
+      if (username && password) {
+        showProducts();
+      } else {
+        alert("Por favor, preencha todos os campos.");
+      }
+    }
+    
+    function resetPassword(event) {
+      if (event) {
+        event.preventDefault(); // Impede o envio do formulário (recarregamento da página)
+      }
+  
+      var email = document.getElementById("email").value;
+  
+      if (email) {
+        alert("O link para redefinição de senha foi enviado para o email informado.");
+        showHome();
+      } else {
+        alert("Por favor, informe o email cadastrado.");
+      }
+    }
+    
+    showHome(); // Mostrar a página inicial ao carregar a página
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Produtos</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <h1>Lista de Produtos</h1>
+
+  <ul id="productList">
+    <!-- Os produtos serão adicionados dinamicamente pelo JavaScript -->
+  </ul>
+
+  <script>
+    // Exemplo de lista de produtos (pode ser substituído pelos dados reais do seu sistema)
+    var products = [
+      { id: 1, name: "Produto 1", price: 10.0, image: "product1.jpg" },
+      { id: 2, name: "Produto 2", price: 20.0, image: "product2.jpg" },
+      // Adicione mais produtos aqui...
+    ];
+
+    var productList = document.getElementById("productList");
+
+    // Iterar sobre os produtos e criar os elementos HTML correspondentes
+    products.forEach(function (product) {
+      var listItem = document.createElement("li");
+
+      var image = document.createElement("img");
+      image.src = product.image;
+      image.alt = product.name;
+      listItem.appendChild(image);
+
+      var id = document.createElement("span");
+      id.textContent = "ID: " + product.id;
+      listItem.appendChild(id);
+
+      var name = document.createElement("span");
+      name.textContent = "Nome: " + product.name;
+      listItem.appendChild(name);
+
+      var price = document.createElement("span");
+      price.textContent = "Preço: $" + product.price;
+      listItem.appendChild(price);
+
+      productList.appendChild(listItem);
+    });
+  </script>
+</body>
+
+</html>
