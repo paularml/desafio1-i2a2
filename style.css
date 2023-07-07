@@ -1,62 +1,114 @@
-/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Styles&display=swap');
 
 /* Estilos gerais */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  background: #000000;
+  font-family: 'Styles', sans-serif;
+  color: #ffffff;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 30px;
+h1,
+h2,
+h3 {
+  font-family: 'Styles', sans-serif;
+  color: #ffffff;
 }
 
-/* Estilos para o cabeçalho */
+p {
+  color: #777777;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #cccccc;
+}
+
+.circle {
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 20px;
+  display: inline-block;
+  font-family: 'Styles', sans-serif;
+}
+
+/* Homepage */
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-}
-
-header h1 {
-  margin: 0;
-}
-
-/* Estilos para a navegação */
-nav {
-  background-color: #f2f2f2;
-  padding: 10px 0;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   text-align: center;
+  margin-top: 100px;
 }
 
-nav ul li {
-  display: inline;
+#loginForm {
+  text-align: center;
+  margin-top: 50px;
 }
 
-nav ul li button {
-  background: none;
-  border: none;
+input[type="text"],
+input[type="password"] {
+  border-radius: 50px;
   padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+  font-family: 'Styles', sans-serif;
+  font-size: 14px;
 }
 
-/* Estilos para o conteúdo principal */
-#content {
+button[type="submit"],
+button {
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Styles', sans-serif;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Página de produtos */
+#productList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  margin-top: 50px;
+  justify-items: center;
+}
+
+.product {
+  border: 1px solid #ffffff;
   padding: 20px;
 }
 
-/* Estilos para o rodapé */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+#backButton {
   text-align: center;
+  margin-top: 50px;
+}
+
+/* Página de esqueci minha senha */
+#resetPasswordForm {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#resetPasswordForm input[type="email"] {
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: 'Styles', sans-serif;
+  font-size: 14px;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  font-size: 12px;
+  margin-top: auto;
+  margin-bottom: 20px;
 }
