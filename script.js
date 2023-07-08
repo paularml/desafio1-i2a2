@@ -29,3 +29,4 @@ function resetPassword(event) {
     alert("Por favor, informe o email cadastrado.");
   }
 }
+
