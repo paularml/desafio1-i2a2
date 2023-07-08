@@ -6,6 +6,45 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Petrona&display=swap">
   <script src="script.js"></script>
+  <style>
+    /* Estilos personalizados */
+    input[type="text"],
+    input[type="password"],
+    button[type="submit"],
+    button,
+    #email {
+      height: 30px;
+      width: 200px;
+      font-size: 14px;
+      padding: 5px 15px;
+      box-sizing: border-box;
+    }
+
+    #content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    #content .fade-in {
+      opacity: 0;
+      animation: fade-in-animation 5s ease-in-out forwards;
+    }
+
+    #productList {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      justify-items: center;
+    }
+
+    @keyframes fade-in-animation {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -26,28 +65,27 @@
     function showHome() {
       var content = document.getElementById("content");
       content.innerHTML = `
-        
-        <form id="loginForm">
-          <label for="username">E-mail:</label>
-          <input type="text" id="username" required>
-          
-          <label for="password">Senha:</label>
-          <input type="password" id="password" required>
-          
-          <button type="submit" onclick="login()">Entrar</button>
-          <button onclick="showForgotPassword()">Esqueci minha senha</button>
-        </form>
+        <div class="fade-in">
+          <form id="loginForm">
+            <input type="text" id="username" placeholder="E-mail" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            
+            <button type="submit" onclick="login()" class="fade-in">Entrar</button>
+            <button onclick="showForgotPassword()" class="fade-in">Esqueci minha senha</button>
+          </form>
+        </div>
       `;
     }
 
     function showProducts() {
       var content = document.getElementById("content");
       content.innerHTML = `
-        
-        <button onclick="showHome()">Voltar para a página inicial</button>
-        <ul id="productList">
-          <!-- Os produtos serão adicionados dinamicamente pelo JavaScript -->
-        </ul>
+        <div class="fade-in">
+          <button onclick="showHome()" class="fade-in">Voltar para a página inicial</button>
+          <ul id="productList" class="fade-in">
+            <!-- Os produtos serão adicionados dinamicamente pelo JavaScript -->
+          </ul>
+        </div>
       `;
 
       // Exemplo de lista de produtos (pode ser substituído pelos dados reais do seu sistema)
@@ -87,14 +125,14 @@
     function showForgotPassword() {
       var content = document.getElementById("content");
       content.innerHTML = `
-        
-        <form id="resetPasswordForm">
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" required>
-          
-          <button type="submit" onclick="resetPassword()">Redefinir a senha</button>
-          <button onclick="showHome()">Voltar para o login</button>
-        </form>
+        <div class="fade-in">
+          <form id="resetPasswordForm">
+            <input type="email" id="email" placeholder="E-mail" required>
+            
+            <button type="submit" onclick="resetPassword()" class="fade-in">Redefinir a senha</button>
+            <button onclick="showHome()" class="fade-in">Voltar para o login</button>
+          </form>
+        </div>
       `;
     }
 
