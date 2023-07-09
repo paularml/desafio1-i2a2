@@ -7,8 +7,32 @@ body {
   color: #ffffff;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 4s ease-in-out forwards;
+  animation: fade-in-animation 6s ease-in-out forwards;
+
   /* Animação para aumentar a opacidade */
+
+
+}
+
+#flameAnimation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  animation: fade-in-animation 4s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+}
+
+#flameImage {
+  width: 500px;
+  /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h1,
@@ -47,7 +71,7 @@ header {
   margin-top: 100px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 4s ease-in-out forwards;
+  animation: fade-in-animation 6s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -56,7 +80,7 @@ header {
   margin-top: 50px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 4s ease-in-out forwards;
+  animation: fade-in-animation 6s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -74,7 +98,7 @@ button {
   /* Ajuste o valor da largura conforme necessário */
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 4s ease-in-out forwards;
+  animation: fade-in-animation 6s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -87,7 +111,7 @@ button {
   justify-items: center;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 4s ease-in-out forwards;
+  animation: fade-in-animation 6s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -117,7 +141,7 @@ button {
   margin-top: 50px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 4s ease-in-out forwards;
+  animation: fade-in-animation 6s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -132,7 +156,7 @@ button {
   /* Ajuste o valor da largura conforme necessário */
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 4s ease-in-out forwards;
+  animation: fade-in-animation 6s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -144,7 +168,7 @@ footer {
   margin-bottom: 20px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 4s ease-in-out forwards;
+  animation: fade-in-animation 6s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -154,7 +178,7 @@ footer {
   font-weight: normal;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 4s ease-in-out forwards;
+  animation: fade-in-animation 6s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 

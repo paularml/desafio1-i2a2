@@ -1,6 +1,21 @@
 /* script.js */
+// Chama a função ao carregar a página
+window.addEventListener("load", function () {
+  // Seleciona o elemento da imagem da chama
+  var flameImage = document.getElementById("flameImage");
 
-// Função para ação do formulário de login (homepage)
+  // Cria a animação utilizando o GSAP
+  gsap.to(flameImage, {
+
+  });
+});
+
+setTimeout(function () {
+  var flameSection = document.getElementById("flameAnimation");
+  flameSection.parentNode.removeChild(flameSection);
+}, 2000); // Tempo em milissegundos que a animação deve durar (aqui definido como 5 segundos)
+
+
 function login(event) {
   event.preventDefault(); // Impede o envio do formulário (recarregamento da página)
 
