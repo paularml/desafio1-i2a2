@@ -71,7 +71,7 @@ header {
   margin-top: 100px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 6s ease-in-out forwards;
+  animation: fade-in-animation 13s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -80,7 +80,7 @@ header {
   margin-top: 50px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 6s ease-in-out forwards;
+  animation: fade-in-animation 13s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -98,7 +98,7 @@ button {
   /* Ajuste o valor da largura conforme necessário */
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 6s ease-in-out forwards;
+  animation: fade-in-animation 13s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -111,7 +111,7 @@ button {
   justify-items: center;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 6s ease-in-out forwards;
+  animation: fade-in-animation 13s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -131,8 +131,13 @@ button {
 }
 
 #backButton {
-  text-align: center;
-  margin-top: 50px;
+  #backButton {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px;
+  }
 
 }
 
@@ -142,7 +147,7 @@ button {
   margin-top: 50px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 6s ease-in-out forwards;
+  animation: fade-in-animation 13s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -157,7 +162,7 @@ button {
   /* Ajuste o valor da largura conforme necessário */
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 6s ease-in-out forwards;
+  animation: fade-in-animation 13s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -169,7 +174,7 @@ footer {
   margin-bottom: 20px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 6s ease-in-out forwards;
+  animation: fade-in-animation 13s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -179,13 +184,24 @@ footer {
   font-weight: normal;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 6s ease-in-out forwards;
+  animation: fade-in-animation 13s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
 /* Animação fadeIn */
 @keyframes fade-in-animation {
+  from {
+    opacity: 0;
+  }
+
   to {
     opacity: 1;
   }
+}
+
+.fade-in {
+  opacity: 0;
+  /* Inicia com opacidade 0 */
+  animation: fade-in-animation 13s ease-in-out forwards;
+  /* Animação para aumentar a opacidade */
 }

@@ -30,7 +30,7 @@
 
     #content .fade-in {
       opacity: 0;
-      animation: fade-in-animation 6s ease-in-out forwards;
+      animation: fade-in-animation 13s ease-in-out forwards;
     }
 
     #productList {
@@ -51,16 +51,14 @@
 <body>
   <div id="wrapper">
     <header>
-      <h1 id="welcomeText">Bem-vindo ao meu site</h1>
+      <h1 id="welcomeText" class="fade-in">Bem-vindo ao meu site</h1>
     </header>
 
     <main id="content">
       <!-- Conteúdo dinâmico será adicionado pelo JavaScript -->
     </main>
 
-    <footer>
-      <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
-    </footer>
+
   </div>
   <section id="flameAnimation">
     <img src="fire_flame.gif" alt="Chama" id="flameImage">
@@ -87,7 +85,7 @@
       content.innerHTML = `
         <div class="fade-in">
           <div id="backButton">
-          <button onclick="showHome()" class="fade-in">Voltar para a página inicial</button>
+          <button id="backButton" button onclick="showHome()" class="fade-in">Voltar para a página inicial</button>
           <ul id="productList" class="fade-in">
           </div>  
             <!-- Os produtos serão adicionados dinamicamente pelo JavaScript -->

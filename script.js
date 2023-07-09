@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
 setTimeout(function () {
   var flameSection = document.getElementById("flameAnimation");
   flameSection.parentNode.removeChild(flameSection);
-}, 2000); // Tempo em milissegundos que a animação deve durar (aqui definido como 5 segundos)
+}, 2550); // Tempo em milissegundos que a animação deve durar (aqui definido como 5 segundos)
 
 
 function login(event) {
