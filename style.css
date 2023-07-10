@@ -71,7 +71,7 @@ header {
   margin-top: 100px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 13s ease-in-out forwards;
+  animation: fade-in-animation 9s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -80,7 +80,7 @@ header {
   margin-top: 50px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 13s ease-in-out forwards;
+  animation: fade-in-animation 9s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -98,7 +98,7 @@ button {
   /* Ajuste o valor da largura conforme necessário */
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 13s ease-in-out forwards;
+  animation: fade-in-animation 9s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -111,8 +111,10 @@ button {
   justify-items: center;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 13s ease-in-out forwards;
+  animation: fade-in-animation 9s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
+  margin-bottom: 50px;
+  list-style-type: none;
 }
 
 .product {
@@ -130,14 +132,31 @@ button {
   margin-top: 10px;
 }
 
+.product-info {
+  font-family: 'Petrona', sans-serif;
+  text-align: center;
+}
+
+.product-info span {
+  display: block;
+  margin-top: 10px;
+}
+
 #backButton {
   #backButton {
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 20px;
+    z-index: 9999;
   }
+
+  footer {
+    position: relative;
+    margin-top: 50px;
+    /* Adicione esta linha para criar espaço para o botão de voltar */
+  }
+
 
 }
 
@@ -147,7 +166,7 @@ button {
   margin-top: 50px;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 13s ease-in-out forwards;
+  animation: fade-in-animation 9s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -162,21 +181,10 @@ button {
   /* Ajuste o valor da largura conforme necessário */
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 13s ease-in-out forwards;
+  animation: fade-in-animation 9s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
-/* Rodapé */
-footer {
-  text-align: center;
-  font-size: 12px;
-  margin-top: auto;
-  margin-bottom: 20px;
-  opacity: 0;
-  /* Inicia com opacidade 0 */
-  animation: fade-in-animation 13s ease-in-out forwards;
-  /* Animação para aumentar a opacidade */
-}
 
 /* Bem-vindo ao meu site */
 #welcomeText {
@@ -184,7 +192,7 @@ footer {
   font-weight: normal;
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 13s ease-in-out forwards;
+  animation: fade-in-animation 9s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
 }
 
@@ -202,6 +210,33 @@ footer {
 .fade-in {
   opacity: 0;
   /* Inicia com opacidade 0 */
-  animation: fade-in-animation 13s ease-in-out forwards;
+  animation: fade-in-animation 9s ease-in-out forwards;
   /* Animação para aumentar a opacidade */
+}
+
+.product-list-image {
+  width: 420px;
+  height: auto;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#logoContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 30px;
+  opacity: 0;
+  animation: fade-in-animation 9s ease-in-out forwards;
+}
+
+#logoImage {
+  max-width: 70px;
+  /* Ajuste o tamanho conforme necessário */
 }

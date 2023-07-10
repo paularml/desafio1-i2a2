@@ -30,7 +30,7 @@
 
     #content .fade-in {
       opacity: 0;
-      animation: fade-in-animation 13s ease-in-out forwards;
+      animation: fade-in-animation 9s ease-in-out forwards;
     }
 
     #productList {
@@ -51,7 +51,11 @@
 <body>
   <div id="wrapper">
     <header>
-      <h1 id="welcomeText" class="fade-in">Bem-vindo ao meu site</h1>
+      <h1 id="welcomeText" class="fade-in">The Horror Bookstore</h1>
+      <div id="logoContainer" class="fade-in">
+        <img id="logoImage" src="logo6.png" alt="Logo do site">
+      </div>
+
     </header>
 
     <main id="content">
@@ -78,25 +82,46 @@
           </form>
         </div>
       `;
+      localStorage.setItem('currentPage', 'home');
+
+
     }
 
     function showProducts() {
       var content = document.getElementById("content");
       content.innerHTML = `
         <div class="fade-in">
-          <div id="backButton">
-          <button id="backButton" button onclick="showHome()" class="fade-in">Voltar para a página inicial</button>
           <ul id="productList" class="fade-in">
-          </div>  
-            <!-- Os produtos serão adicionados dinamicamente pelo JavaScript -->
+          <!-- Os produtos serão adicionados dinamicamente pelo JavaScript -->
           </ul>
         </div>
       `;
+      var backButton = document.createElement("button");
+      backButton.textContent = "Voltar para a página inicial";
+      backButton.classList.add("fade-in", "back-button");
+      backButton.addEventListener("click", showHome);
+
+      var content = document.getElementById("content");
+      content.appendChild(backButton);
 
       // Exemplo de lista de produtos (pode ser substituído pelos dados reais do seu sistema)
       var products = [
-        { id: 1, name: "Produto 1", price: 10.0, image: "product1.jpg" },
-        { id: 2, name: "Produto 2", price: 20.0, image: "product2.jpg" },
+        { id: 1, name: "Goya Horrors Vol.1", price: 40.0, image: "terror2.jpg" },
+        { id: 2, name: "Goya Horrors Vol.2", price: 49.0, image: "terror2.3.jpg" },
+        { id: 3, name: "Farise", price: 30.0, image: "terror8.jpg" },
+        { id: 4, name: "Fraryrne", price: 35.0, image: "terror12.jpg" },
+        { id: 5, name: "The Little Demon Girl Vol.1", price: 20.0, image: "terror13.jpg" },
+        { id: 6, name: "The Little Demon Girl Vol.2", price: 25.0, image: "terror13.3.jpg" },
+        { id: 7, name: "The Hunter", price: 15.0, image: "terror15.jpg" },
+        { id: 8, name: "Gore Tails Vol.1", price: 45.0, image: "terror1.jpg" },
+        { id: 9, name: "Gore Tails Vol.2", price: 40.0, image: "terror1.2.jpg" },
+        { id: 10, name: "Gore Tails Vol.3", price: 40.0, image: "terror1.3.jpg" },
+        { id: 11, name: "Jigoku Shoujo Tails Vol.1", price: 50.0, image: "terror7.jpg" },
+        { id: 12, name: "Jigoku Shoujo Tails Vol.2", price: 56.0, image: "terror7.2.jpg" },
+        { id: 13, name: "Jigoku Shoujo Tails Vol.3", price: 60.0, image: "terror6.jpg" },
+        { id: 14, name: "Jigoku Shoujo Tails Vol.4", price: 59.0, image: "terror6.2.jpg" },
+        { id: 15, name: "The New Teorite Vol.1", price: 40.0, image: "terror16.jpg" },
+        { id: 16, name: "The New Teorite Vol.1", price: 45.0, image: "terror16.2.jpg" },
         // Adicione mais produtos aqui...
       ];
 
@@ -109,22 +134,32 @@
         var image = document.createElement("img");
         image.src = product.image;
         image.alt = product.name;
-        listItem.appendChild(image);
+        image.classList.add("product-list-image");
+
+        var productInfo = document.createElement("div");
+        productInfo.className = "product-info";
 
         var id = document.createElement("span");
         id.textContent = "ID: " + product.id;
-        listItem.appendChild(id);
+        productInfo.appendChild(id);
 
         var name = document.createElement("span");
-        name.textContent = "Nome: " + product.name;
-        listItem.appendChild(name);
+        name.textContent = " " + product.name;
+        productInfo.appendChild(name);
 
         var price = document.createElement("span");
-        price.textContent = "Preço: $" + product.price;
-        listItem.appendChild(price);
+        price.textContent = "Price: $" + product.price;
+        productInfo.appendChild(price);
+
+        listItem.appendChild(image);
+        listItem.appendChild(productInfo);
 
         productList.appendChild(listItem);
+
       });
+
+      localStorage.setItem('currentPage', 'products');
+
     }
 
     function showForgotPassword() {
@@ -139,6 +174,9 @@
           </form>
         </div>
       `;
+
+      localStorage.setItem('currentPage', 'forgotPassword');
+
     }
 
     function login(event) {
@@ -171,7 +209,23 @@
       }
     }
 
-    showHome(); // Mostrar a página inicial ao carregar a página
+    showHome();
+    window.addEventListener('load', function () {
+      var currentPage = localStorage.getItem('currentPage');
+      if (currentPage) {
+        if (currentPage === 'home') {
+          showHome();
+        } else if (currentPage === 'products') {
+          showProducts();
+        } else if (currentPage === 'forgotPassword') {
+          showForgotPassword();
+        }
+      } else {
+        showHome();
+      }
+    });
+
+ // Mostrar a página inicial ao carregar a página
   </script>
 </body>
 
