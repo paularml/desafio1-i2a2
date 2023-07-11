@@ -3,6 +3,7 @@
 
 <head>
   <title>The Horror Bookstore</title>
+  <link rel="icon" href="logo6.png">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Petrona&display=swap">
 
@@ -44,6 +45,7 @@
       to {
         opacity: 1;
       }
+
     }
   </style>
 </head>
@@ -121,7 +123,7 @@
         { id: 13, name: "Jigoku Shoujo Tails Vol.3", price: 60.0, image: "terror6.jpg" },
         { id: 14, name: "Jigoku Shoujo Tails Vol.4", price: 59.0, image: "terror6.2.jpg" },
         { id: 15, name: "The New Teorite Vol.1", price: 40.0, image: "terror16.jpg" },
-        { id: 16, name: "The New Teorite Vol.1", price: 45.0, image: "terror16.2.jpg" },
+        { id: 16, name: "The New Teorite Vol.2", price: 45.0, image: "terror16.2.jpg" },
         // Adicione mais produtos aqui...
       ];
 
@@ -148,8 +150,14 @@
         productInfo.appendChild(name);
 
         var price = document.createElement("span");
-        price.textContent = "Price: $" + product.price;
+        price.textContent = "Preço: $" + product.price;
         productInfo.appendChild(price);
+
+        var buyButton = document.createElement("button");
+        buyButton.textContent = "Adquirir";
+        buyButton.classList.add("fade-in", "back-button", "buy-button");
+        buyButton.style.padding = "2px 6px"; // Defina o padding desejado
+        productInfo.appendChild(buyButton);
 
         listItem.appendChild(image);
         listItem.appendChild(productInfo);
@@ -209,21 +217,20 @@
       }
     }
 
-    showHome();
     window.addEventListener('load', function () {
       var currentPage = localStorage.getItem('currentPage');
-      if (currentPage) {
-        if (currentPage === 'home') {
-          showHome();
-        } else if (currentPage === 'products') {
-          showProducts();
-        } else if (currentPage === 'forgotPassword') {
-          showForgotPassword();
-        }
+
+      if (currentPage === 'home') {
+        showHome();
+      } else if (currentPage === 'products') {
+        showProducts();
+      } else if (currentPage === 'forgotPassword') {
+        showForgotPassword();
       } else {
         showHome();
       }
     });
+
 
  // Mostrar a página inicial ao carregar a página
   </script>

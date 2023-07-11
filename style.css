@@ -142,23 +142,25 @@ button {
   margin-top: 10px;
 }
 
-#backButton {
-  #backButton {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 9999;
-  }
-
-  footer {
-    position: relative;
-    margin-top: 50px;
-    /* Adicione esta linha para criar espaço para o botão de voltar */
-  }
-
-
+.product-list-image {
+  margin-top: 60px;
+  /* ou margin-left: 10px; */
 }
+
+#backButton {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+footer {
+  position: relative;
+  margin-top: 50px;
+  /* Adicione esta linha para criar espaço para o botão de voltar */
+}
+
 
 /* Página de esqueci minha senha */
 #resetPasswordForm {
