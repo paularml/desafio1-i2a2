@@ -84,7 +84,7 @@
           </form>
         </div>
       `;
-      localStorage.setItem('currentPage', 'home');
+      window.location.hash = 'home'; // Adiciona o identificador 'home' ao hash da URL
 
 
     }
@@ -98,6 +98,7 @@
           </ul>
         </div>
       `;
+      window.location.hash = 'products'; // Adiciona o identificador 'products' ao hash da URL
       var backButton = document.createElement("button");
       backButton.textContent = "Voltar para a página inicial";
       backButton.classList.add("fade-in", "back-button");
@@ -166,7 +167,7 @@
 
       });
 
-      localStorage.setItem('currentPage', 'products');
+
 
     }
 
@@ -183,7 +184,7 @@
         </div>
       `;
 
-      localStorage.setItem('currentPage', 'forgotPassword');
+      window.location.hash = 'forgotPassword'; // Adiciona o identificador 'forgotPassword' ao hash da URL
 
     }
 
@@ -217,8 +218,8 @@
       }
     }
 
-    window.addEventListener('load', function () {
-      var currentPage = localStorage.getItem('currentPage');
+    window.addEventListener('DOMContentLoaded', function () {
+      var currentPage = window.location.hash.substr(1); // Obtém o valor do hash da URL
 
       if (currentPage === 'home') {
         showHome();
@@ -230,7 +231,6 @@
         showHome();
       }
     });
-
 
  // Mostrar a página inicial ao carregar a página
   </script>
